@@ -1,0 +1,42 @@
+.team-form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  max-width: 480px;
+  margin: 0 auto 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.team-form h2 { font-size: 1.1rem; color: #2563eb; }
+
+.team-form input,
+.team-form select {
+  padding: 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.team-form button {
+  padding: 0.7rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.team-form button:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+.team-form__preview {
+  font-size: 0.9rem;
+  color: #64748b;
+  text-align: center;
+}

@@ -60,3 +60,71 @@ Footer - footer content
 - Global CSS : index.css  : global resets , fonts / base styles 
 - CSS files per component : App.css 
 - Advanced styling libs like Tailwind.css , Bootstrap.css 
+
+
+## REACT EVENT HANDLERS 
+JS function that runs when something happens - a click , key press , forms submit. 
+React listens to the event then calls the JS function 
+
+## How to attach an event handler in react components
+document.getElementById("#idref").addEventListener('submit', (e) => {
+               e.preventDefault() // prevent default form submissions 
+}) 
+
+
+instead of the traditional dom method , react uses camelCase propnames to describe the event 
+- onClick , - onChange , - onSubmit , -onKeyDown 
+- Once event is event is give n we pass a function reference(give name of function) instead of a string like in html
+
+Button click should effect add function 
+function add(a,b){
+    return a + b 
+}
+
+add()  //invoking 
+add //function reference 
+
+onClick={add} // tagging event to function reference 
+onClick={add(10,20)} // function will be invoked without event happening 
+
+## Event Object 
+- react passes a sythentic event as the first argument for proper browser reads. 
+
+e.stopPropagation() - click events // is how you stop a child's click from bubbling to the parent's 
+click 
+
+## Apart from function references how else can event handling be done 
+1. if not this 
+onClick={add} // tagging event to function reference 
+
+2. wrap event function in an arrow function
+onClick={() => add(10,20)}
+
+3. Immediate function invoking regardless of event 
+onClick={add(10,20)} // function will be invoked without event happening 
+
+
+
+## lifting state up
+
+## react flow
+        ┌───────────────────────────┐
+        │  TeamList                 │
+        │  state: favorites[]       │
+        └────────────┬──────────────┘
+                     │ props: isFavorite, onToggleFavorite
+                     ▼
+        ┌───────────────────────────┐
+        │  TeamCard                 │
+        │  (no state — pure UI)     │
+        └────────────┬──────────────┘
+                     │ user clicks button
+                     │ calls onToggleFavorite()
+                     ▼
+        ┌───────────────────────────┐
+        │  TeamList                 │
+        │  setFavorites(...)        │
+        └────────────┬──────────────┘
+                     │ re-render
+                     ▼
+              UI updates 
