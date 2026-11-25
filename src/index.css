@@ -1,0 +1,11 @@
+/* *: selects stylings for every single element by default */
+* {
+  box-sizing: border-box; margin: 0; padding: 0;
+}
+/* fonts , background , color text */
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: #f5f7fb;
+  color: #1a1a1a;
+}
+
