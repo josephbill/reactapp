@@ -1,4 +1,15 @@
 import {useState} from 'react'
+
+// component to display count 
+function CounterDisplay({count}){
+     return <>
+        <h2>Count: {count}</h2>
+     </>
+}
+// increment button - component with button to be clicked 
+function IncrementButton({onIncrement}){
+       return <button onClick={onIncrement}>+1</button>
+}
 function CounterComponent(){
     //state is used to manage data inside a component i.e. make a component remember 
     // to define state in a component 
@@ -14,8 +25,8 @@ function CounterComponent(){
 
     return (
         <div>
-          <button onClick={handleclik}>Clicked {count} times</button>
-
+            <CounterDisplay count={count}/>
+            <IncrementButton onIncrement={handleclik} />
         </div>
     )
 

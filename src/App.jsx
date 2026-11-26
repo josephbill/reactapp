@@ -49,6 +49,7 @@ function App(){
           <Header title={title} subtitle={slogan}/> 
           <TeamForm onAddMember={handleAddMember}/>
           <TeamList members={teamMembers}/>
+          <CounterComponent/>
           <Footer year={2026}/>
           {/* <AnotherComponent/> */}
     </div>
